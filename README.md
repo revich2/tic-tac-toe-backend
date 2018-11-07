@@ -1,2 +1,1 @@
-# Core
-
+# Tic-tac-toe backend
