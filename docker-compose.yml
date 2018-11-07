@@ -1,0 +1,26 @@
+version: '2'
+services:
+  core:
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    command: 'yarn start'
+    ports:
+      - '${PORT}:${PORT}'
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: core
+    volumes:
+      - .:/usr/app
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:10.1-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_DB: core
+      POSTGRES_PASSWORD: 123456
