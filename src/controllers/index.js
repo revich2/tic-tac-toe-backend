@@ -1,5 +1,9 @@
 'use strict'
 
+const MovesController = require('./moves')
+const LearningController = require('./learning')
+
 module.exports = {
-  UsersController: require('./users'),
+  MovesController: new MovesController(),
+  LearningController: new LearningController(),
 }

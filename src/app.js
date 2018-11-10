@@ -6,7 +6,9 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
 const routers = require('routers')
-const database = require('database')
+// const database = require('database')
+
+const { modelService } = require('./services')
 
 class Application {
   constructor() {
@@ -27,11 +29,14 @@ class Application {
   }
 
   initialize() {
-    return this.expressInitialize(this._app)
-      .then(() => database.testConnection())
-      .then(() => database.initialize())
-      .then(() => database.sync())
-      .then(() => this._app)
+    return (
+      this.expressInitialize(this._app)
+        // .then(() => database.testConnection())
+        // .then(() => database.initialize())
+        // .then(() => database.sync())
+        .then(() => modelService.loadModel(`file://${__dirname + '/../model/model.json'}`))
+        .then(() => this._app)
+    )
   }
 }
 

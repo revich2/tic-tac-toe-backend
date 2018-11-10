@@ -2,10 +2,10 @@
 
 const { Router } = require('helpers')
 
+const { MovesController } = require('../controllers')
+
 const router = Router.createRouter()
 
-router.get('/', (req, res) => {
-  res.send('Hello from route')
-})
+router.get('/make-move', MovesController.makeMove)
 
 module.exports = router

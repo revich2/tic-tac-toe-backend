@@ -25,13 +25,15 @@
     "prettier": "^1.14.3"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^0.13.4",
+    "@tensorflow/tfjs-node": "^0.1.20",
+    "@tensorflow/tfjs-node-gpu": "^0.1.20",
     "app-module-path": "^2.2.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "dotenv-expand": "^4.2.0",
     "express": "^4.16.3",
-    "morgan": "^1.9.1",
-    "pg": "^7.5.0",
-    "sequelize": "^4.39.0"
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1"
   }
 }

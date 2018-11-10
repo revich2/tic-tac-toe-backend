@@ -6,6 +6,7 @@ const router = Router.createRouter()
 
 router.all('/', (req, res) => res.send('¯\\_(ツ)_/¯'))
 
-router.use('/users', require('./users'))
+router.use('/moves', require('./moves'))
+router.use('/learning', require('./learning'))
 
 module.exports = router
